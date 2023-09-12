@@ -11,6 +11,17 @@
         padding: 20px;
         background-color: rgba(253, 214, 214, 0.8);
       }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0;
+      }
+
       h1 {
         color: white;
       }
@@ -37,6 +48,10 @@
 
       p {
         color: yellowgreen;
+      }
+
+      span {
+        font-size: 24px;
       }
 
       #title {
@@ -69,13 +84,28 @@
         transition: all 0.3s ease-out;
       }
 
-      .buttonWrraper {
+      input {
+        padding: 16px;
+        border-radius: 8px;
+        border-width: 1px;
+        font-size: 16px;
+      }
+
+      .wrraper {
         display: flex;
         flex-direction: column;
         gap: 16px;
+        padding: 16px 0px;
       }
 
-      #countValue {
+      .inputWrraper {
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+      }
+
+      #countValue,
+      #countValue2 {
         color: black;
       }
     </style>
@@ -93,13 +123,24 @@
     <p></p>
     <p></p>
 
-    <h1 id="countValue">0</h1>
-
-    <div class="buttonWrraper">
+    <div class="wrraper">
+      <h1 id="countValue">0</h1>
       <button>버튼</button>
       <button>버튼2</button>
       <button id="plusBtn">+</button>
       <button id="minusBtn">-</button>
+    </div>
+
+    <div class="wrraper">
+      <div class="inputWrraper">
+        <input type="number" value="0" />
+        <span>+</span>
+        <input type="number" value="0" />
+      </div>
+
+      <h1 id="countValue2">0</h1>
+
+      <button id="resultBtn">정답</button>
     </div>
   </body>
   <script>
@@ -112,6 +153,10 @@
     const plusButton = document.getElementById("plusBtn");
     const minusButton = document.getElementById("minusBtn");
     const value = document.getElementById("countValue");
+
+    const input = document.getElementsByTagName("input");
+    const resultButton = document.getElementById("resultBtn");
+    const countValue2 = document.getElementById("countValue2");
 
     let num = 0;
 
@@ -190,6 +235,29 @@
         if (value) {
           num = count("minus", num);
           valueSet(num);
+        }
+      });
+    }
+
+    const getRandom = (min, max) => {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+
+    input[0].value = getRandom(1, 10);
+    input[1].value = getRandom(1, 10);
+
+    const countInput = (val1, val2) => {
+      if (!isNaN(Number(val1)) && !isNaN(Number(val2))) {
+        countValue2.innerText = `정답은 ${Number(val1) + Number(val2)} 입니다.`;
+      }
+    };
+
+    countInput(input[0].value, input[1].value);
+
+    if (resultButton) {
+      resultButton.addEventListener("click", () => {
+        if (countValue2) {
+          countInput(input[0].value, input[1].value);
         }
       });
     }
