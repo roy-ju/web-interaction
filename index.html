@@ -74,6 +74,10 @@
         flex-direction: column;
         gap: 16px;
       }
+
+      #countValue {
+        color: black;
+      }
     </style>
   </head>
 
@@ -89,23 +93,27 @@
     <p></p>
     <p></p>
 
+    <h1 id="countValue">0</h1>
+
     <div class="buttonWrraper">
       <button>버튼</button>
       <button>버튼2</button>
-      <button>+</button>
-      <button>-</button>
+      <button id="plusBtn">+</button>
+      <button id="minusBtn">-</button>
     </div>
   </body>
   <script>
     let h1 = document.querySelector("h1");
-
     let p = document.querySelectorAll("p");
-
     let title = document.getElementById("title");
-
     let webTitle = document.querySelectorAll(".webTitle");
-
     let button = document.querySelectorAll("button");
+
+    const plusButton = document.getElementById("plusBtn");
+    const minusButton = document.getElementById("minusBtn");
+    const value = document.getElementById("countValue");
+
+    let num = 0;
 
     // let webTitle = document.getElementsByClassName("webTitle");
 
@@ -151,6 +159,40 @@
         ele.innerHTML = `클릭되었어요 ${idx}`;
       });
     });
+
+    const count = (type, value) => {
+      let result = value;
+
+      if (type === "plus") {
+        result += 1;
+      } else if (type === "minus") {
+        result -= 1;
+      }
+
+      return result;
+    };
+
+    const valueSet = (n) => {
+      value.innerText = `결과값은 ${n} 입니다.`;
+    };
+
+    if (plusButton) {
+      plusButton.addEventListener("click", () => {
+        if (value) {
+          num = count("plus", num);
+          valueSet(num);
+        }
+      });
+    }
+
+    if (minusButton) {
+      minusButton.addEventListener("click", () => {
+        if (value) {
+          num = count("minus", num);
+          valueSet(num);
+        }
+      });
+    }
 
     // webTitle[0].style.color = "red";
 
