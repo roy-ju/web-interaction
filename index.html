@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: rgba(189, 59, 59, 0.8);
+      }
+      h1 {
+        color: white;
+      }
+
+      h2 {
+        color: red;
+      }
+
+      h3 {
+        color: blue;
+      }
+
+      h4 {
+        color: green;
+      }
+
+      h5 {
+        color: greenyellow;
+      }
+
+      h6 {
+        color: yellow;
+      }
+
+      p {
+        color: yellowgreen;
+      }
+
+      #title {
+        color: rgb(71, 218, 255);
+      }
+
+      .webTitle {
+        color: skyblue;
+      }
+
+      button {
+        padding: 20px 70px;
+
+        background-color: black;
+        color: white;
+
+        border: none;
+        border-radius: 50px;
+
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: rgb(48, 202, 148);
+        color: black;
+        /* padding: 30px 80px; */
+        font-size: 38px;
+        transition: all 0.3s ease-out;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1></h1>
+    <h2 id="title"></h2>
+    <h3 class="webTitle"></h3>
+    <h4 class="webTitle"></h4>
+    <h5 class="webTitle"></h5>
+    <h6 class="webTitle"></h6>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <button>버튼</button>
+    <button>버튼2</button>
+  </body>
+  <script>
+    let h1 = document.querySelector("h1");
+
+    let p = document.querySelectorAll("p");
+
+    let title = document.getElementById("title");
+
+    let webTitle = document.querySelectorAll(".webTitle");
+
+    let button = document.querySelectorAll("button");
+
+    // let webTitle = document.getElementsByClassName("webTitle");
+
+    // h1.innerText = "웹 인터렉션";
+
+    h1.innerHTML = "<span>웹 인터렉션</span>";
+
+    h1.style.color = "black";
+
+    p.forEach((ele, idx) => {
+      ele.innerHTML = `webInteraction ${idx}`;
+    });
+
+    title.innerText = "웹 인터렉션 타이틀 (대)";
+
+    webTitle.forEach((ele, idx) => {
+      if (idx == 0) {
+        ele.style.color = "yellow";
+        ele.style.fontSize = "60px";
+        ele.style.paddingLeft = "160px";
+        ele.style.display = "block";
+        ele.style.cursor = "pointer";
+
+        ele.addEventListener("click", () => {
+          ele.style.display = "none";
+        });
+      }
+      ele.innerHTML = `웹 인터렉션 웹 타이틀 ${idx}`;
+    });
+
+    button[0].addEventListener("click", () => {
+      if (webTitle[0].style.display === "block") {
+        button[0].innerText = "드러내기";
+        webTitle[0].style.display = "none";
+      } else {
+        button[0].innerText = "숨기기";
+        webTitle[0].style.display = "block";
+      }
+    });
+
+    button[1].addEventListener("click", () => {
+      p.forEach((ele, idx) => {
+        ele.innerHTML = `클릭되었어요 ${idx}`;
+      });
+    });
+
+    // webTitle[0].style.color = "red";
+
+    // Array.from(webTitle).forEach((ele, idx) => {
+    //   ele.innerHTML = `웹 인터렉션 웹 타이틀 ${idx}`;
+    // });
+  </script>
+</html>
