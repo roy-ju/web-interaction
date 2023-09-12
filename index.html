@@ -8,7 +8,8 @@
 
     <style>
       body {
-        background-color: rgba(189, 59, 59, 0.8);
+        padding: 20px;
+        background-color: rgba(253, 214, 214, 0.8);
       }
       h1 {
         color: white;
@@ -47,7 +48,8 @@
       }
 
       button {
-        padding: 20px 70px;
+        width: fit-content;
+        min-width: 120px;
 
         background-color: black;
         color: white;
@@ -55,16 +57,22 @@
         border: none;
         border-radius: 50px;
 
-        font-size: 24px;
+        padding: 10px 40px;
+
+        font-size: 18px;
         cursor: pointer;
       }
 
       button:hover {
-        background: rgb(48, 202, 148);
+        background: white;
         color: black;
-        /* padding: 30px 80px; */
-        font-size: 38px;
         transition: all 0.3s ease-out;
+      }
+
+      .buttonWrraper {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
       }
     </style>
   </head>
@@ -81,8 +89,12 @@
     <p></p>
     <p></p>
 
-    <button>버튼</button>
-    <button>버튼2</button>
+    <div class="buttonWrraper">
+      <button>버튼</button>
+      <button>버튼2</button>
+      <button>+</button>
+      <button>-</button>
+    </div>
   </body>
   <script>
     let h1 = document.querySelector("h1");
