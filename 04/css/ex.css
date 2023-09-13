@@ -2,29 +2,38 @@ body {
   background: linear-gradient(
     150deg,
     #13f0cf,
-    #ddf311,
-    #2d9c9a,
+    #652d9c,
     #220340,
     #220340,
     black
   );
 
   overflow-x: hidden;
+  padding: 0;
+  margin: 0;
 }
 
-h1 {
+.depthWrap {
   position: fixed;
-  bottom: 0;
-  left: 50px;
-
-  line-height: 1;
-  font-size: 70px;
-
+  bottom: 50px;
+  font-size: 20px;
   color: #fff;
+  text-align: center;
+  line-height: 1;
+  width: 100%;
+  border-bottom: 2px dashed #fff;
+  padding-bottom: 10px;
+}
+
+.depthWrap span {
+  width: 80px;
+  display: inline-block;
 }
 
 .innerWrap {
+  position: relative;
   padding: 40px;
+  z-index: 20;
 }
 
 .title {
@@ -35,11 +44,23 @@ h1 {
 }
 
 .textWrap {
-  padding: 500px 30px;
+  padding: 500px 0px;
 }
 
 .textWrap p {
   color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.textWrap .textContent {
+  color: white;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.textWrap img {
+  width: 100%;
 }
 
 .progressWrap {
@@ -58,4 +79,22 @@ h1 {
   z-index: 100;
   background: white;
   transition: width 0.4s ease-out;
+}
+
+.submarine {
+  position: fixed;
+  width: 200px;
+  top: 20%;
+  transition: all 0.3s ease-out;
+  z-index: 30;
+}
+
+.octopus {
+  position: fixed;
+  z-index: 10;
+  bottom: -150px;
+  right: 0;
+  width: 300px;
+  opacity: 0.4;
+  transition: all 2s ease-out;
 }

@@ -1,5 +1,7 @@
-const h1 = document.querySelector("h1");
+const depthWrap = document.querySelector(".depthWrap");
 const progressBar = document.querySelector(".bar");
+const submarine = document.querySelector(".submarine");
+const octopus = document.querySelector(".octopus");
 
 let scrollNum = 0;
 let documentHeight = 0;
@@ -16,17 +18,20 @@ window.addEventListener("scroll", () => {
 
   documentHeight = document.body.scrollHeight - window.innerHeight;
 
-  per = percent(scrollNum, documentHeight) + "%";
+  per = percent(scrollNum, documentHeight);
 
-  h1.innerText = `${scrollNum}m`;
+  depthWrap.querySelector("span").innerText = `${scrollNum.toFixed(0)}`;
 
-  progressBar.style.width = per;
+  progressBar.style.width = per + "%";
 
-  //   h1.innerText = `scrollY: ${scrollNum}px, scrollY + innHeight: ${
+  submarine.style.transform = `translateX(${per}%)`;
+  octopus.style.transform = `translateY(${-per / 3}%)`;
+
+  //   depthWrap.innerText = `scrollY: ${scrollNum}px, scrollY + innHeight: ${
   //     scrollNum + height
   //   }px`;
 
   // 이렇게 되면 100%를 만들 수 없음
 
-  //   h1.innerText = `scrollY: ${(scrollNum / document.body.scrollHeight) * 100} %`;
+  //   depthWrap.innerText = `scrollY: ${(scrollNum / document.body.scrollHeight) * 100} %`;
 });
