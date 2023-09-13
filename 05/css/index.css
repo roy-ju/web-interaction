@@ -15,6 +15,7 @@ header {
   position: relative;
   padding: 10px 20px;
 }
+
 .headerWrap h1 {
   font-size: 15px;
   color: #fff;
@@ -25,10 +26,11 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 1px;
+  height: 4px;
   background-color: #d0d0d0;
   display: none;
 }
+
 .bar {
   width: 0%;
   height: inherit;
@@ -37,13 +39,16 @@ header {
   background-color: black;
   transition: width 0.4s ease-out;
 }
+
 header.fixed {
   position: fixed;
   background: rgba(255, 255, 255, 0.8);
 }
+
 header.fixed .progressWrap {
   display: block;
 }
+
 header.fixed .headerWrap h1 {
   color: #000;
 }
@@ -55,47 +60,43 @@ header.fixed .headerWrap h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 800px; */
   background: black url(../images/bg.jpg) center center / cover no-repeat;
 }
+
 .dimd {
   position: absolute;
   width: 100%;
   height: inherit;
   background-color: rgba(0, 0, 0, 0.4);
 }
-/* .coverWrap:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: inherit;
-    background-color: rgba(0, 0, 0, 0.4);
-} */
 
 .coverTitle {
   position: relative;
   text-align: center;
   z-index: 100;
 }
+
 .coverTitle h1 {
   color: #fff;
   line-height: 18px;
 }
+
 .coverTitle p {
   color: #cecece;
 }
 
 .contWrap {
   position: relative;
-  /* margin-top: 800px; */
   z-index: 1000;
   background-color: #fff;
 }
+
 .contentInnerWrap {
   margin: 0 auto;
   max-width: 600px;
   padding: 30px;
 }
+
 h4 {
   font-size: 20px;
 }
