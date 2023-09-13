@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #3c7364;
+        overflow: hidden;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .gateBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 400px;
+        font-size: 20px;
+        color: white;
+      }
+
+      .gateBox .top {
+        padding: 10px 30px;
+        border: 1px solid white;
+        text-align: center;
+      }
+
+      .gateBox .bottom {
+        border: 1px solid white;
+        border-top: none;
+      }
+
+      .bottom {
+        display: flex;
+      }
+
+      .bottom a {
+        color: white;
+        flex: 1;
+        text-align: center;
+        padding: 20px 0;
+        transition: all 0.2s ease-out;
+      }
+
+      a:hover {
+        background-color: white;
+        color: black;
+      }
+
+      .line {
+        border: 1px solid white;
+      }
+
+      .cursorItem {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1000;
+        pointer-events: none;
+      }
+
+      .circle {
+        position: fixed;
+        width: 120px;
+        height: 120px;
+        background-color: yellowgreen;
+        border-radius: 50%;
+        margin: -60px -60px;
+        opacity: 0.5;
+        transition: all 0.2s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursorItem">
+      <div class="circle"></div>
+    </div>
+    <div class="gateBox">
+      <div class="top">
+        <p>마스크를 써야 하나요?</p>
+      </div>
+      <div class="bottom">
+        <a href="#yes">네</a>
+        <span class="line"></span>
+        <a href="#no">아니요</a>
+      </div>
+    </div>
+  </body>
+  <script>
+    let x = 0;
+    let y = 0;
+
+    let targetX = 0;
+    let targetY = 0;
+    let speed = 0.09;
+
+    const cursorItem = document.querySelector(".cursorItem");
+    const circle = cursorItem.querySelector(".circle");
+
+    window.addEventListener("mousemove", (e) => {
+      x = e.pageX;
+      y = e.pageY;
+    });
+
+    const buttonAll = document.querySelectorAll("a");
+
+    buttonAll.forEach((item) => {
+      item.addEventListener("mouseenter", () => {
+        circle.style.transform = "scale(.3)";
+      });
+
+      item.addEventListener("mouseleave", () => {
+        circle.style.transform = "scale(1)";
+      });
+    });
+
+    const loop = () => {
+      targetX += (x - targetX) * speed;
+      targetY += (y - targetY) * speed;
+
+      //   cursorItem.style.transform = `translate3d(${targetX}px, ${targetY}px, 0)`;
+      cursorItem.style.transform = `translate(${targetX}px, ${targetY}px)`;
+
+      window.requestAnimationFrame(loop);
+    };
+
+    loop();
+  </script>
+</html>

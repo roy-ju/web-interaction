@@ -1,0 +1,61 @@
+body {
+  background: linear-gradient(
+    150deg,
+    #13f0cf,
+    #ddf311,
+    #2d9c9a,
+    #220340,
+    #220340,
+    black
+  );
+
+  overflow-x: hidden;
+}
+
+h1 {
+  position: fixed;
+  bottom: 0;
+  left: 50px;
+
+  line-height: 1;
+  font-size: 70px;
+
+  color: #fff;
+}
+
+.innerWrap {
+  padding: 40px;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 70px;
+}
+
+.textWrap {
+  padding: 500px 30px;
+}
+
+.textWrap p {
+  color: white;
+}
+
+.progressWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #2d9c9a;
+}
+
+.bar {
+  width: 0%;
+  height: inherit;
+  position: absolute;
+  z-index: 100;
+  background: white;
+  transition: width 0.4s ease-out;
+}

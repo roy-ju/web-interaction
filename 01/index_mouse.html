@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #13adcc;
+        /* height: 300vh; */
+      }
+
+      h1 {
+        font-size: 50px;
+        padding: 20px;
+        margin: 0;
+        color: rgb(47, 255, 158);
+      }
+
+      .wrraper {
+        display: flex;
+        align-items: center;
+      }
+
+      .box {
+        width: 60px;
+        height: 60px;
+        /* background-color: black; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 1.5s ease-out;
+
+        /* transform: translate(-100px, -100px); */
+        /* 마우스 포인터의 가운데 */
+      }
+
+      .box img {
+        width: 200px;
+      }
+
+      button {
+        padding: 40px 100px;
+        background-color: black;
+        color: white;
+        font-size: 30px;
+        transition: all 0.5s ease-in-out;
+        border: 0;
+        border-radius: 50px;
+      }
+
+      button:hover {
+        padding: 45px 120px;
+        background-color: rgb(246, 207, 78);
+        color: black;
+      }
+    </style>
+    <!-- <script>
+      window.onload = () => {
+        const h1 = document.querySelectorAll("h1");
+        window.addEventListener("mousemove", (event) => {
+          h1[0].innerText = `x: ${event.x}, y: ${event.y}`;
+          h1[1].innerText = `pageX: ${event.pageX}, pageY: ${event.pageY}`;
+          h1[2].innerText = `clientX: ${event.clientX}, clientY: ${event.clientY}`;
+          h1[3].innerText = `offsetX: ${event.offsetX}, offsetY: ${event.offsetY}`;
+        });
+      };
+    </script> -->
+  </head>
+
+  <body>
+    <div class="wrraper">
+      <h1></h1>
+    </div>
+
+    <div class="wrraper">
+      <h1></h1>
+    </div>
+
+    <div class="wrraper">
+      <h1></h1>
+    </div>
+
+    <div class="wrraper">
+      <h1></h1>
+    </div>
+
+    <div class="wrraper">
+      <h1></h1>
+    </div>
+
+    <div class="box">
+      <img src="./butterfly.gif" alt="나비" />
+    </div>
+
+    <button>버튼</button>
+  </body>
+
+  <script>
+    //     scroll 생겼을때 pageY(페이지 기준) 와 clientY(브라우저 기준)는 값이 다를 수도 있다.
+
+    const h1 = document.querySelectorAll("h1");
+    const box = document.querySelector(".box");
+    const button = document.querySelector("button");
+
+    //   let x = 0;
+    //   let y = 0;
+
+    let targetX = 0;
+    let targetY = 0;
+    let speed = 0.1;
+
+    //   window.addEventListener("mousemove", (event) => {
+    //     x = event.pageX;
+    //     y = event.pageY;
+
+    //     h1[0].innerText = `x: ${event.x}, y: ${event.y}`;
+    //     h1[1].innerText = `pageX: ${event.pageX}, pageY: ${event.pageY}`;
+    //     h1[2].innerText = `clientX: ${event.clientX}, clientY: ${event.clientY}`;
+    //     h1[3].innerText = `screenX: ${event.screenX}, screenY: ${event.screenY}`;
+    //     h1[4].innerText = `offsetX: ${event.offsetX}, offsetY: ${event.offsetY}`;
+
+    //     box.style.top = event.pageY + "px";
+    //     box.style.left = event.pageX + "px";
+    //   });
+
+    button.addEventListener("mouseenter", () => {
+      box.style.top = event.pageY + "px";
+      box.style.left = event.pageX + "px";
+    });
+
+    window.addEventListener("click", (event) => {
+      //click의 경우 css로 어느정도 부드러운 애니메이션이 가능함
+      h1[0].innerText = `x: ${event.x}, y: ${event.y}`;
+      h1[1].innerText = `pageX: ${event.pageX}, pageY: ${event.pageY}`;
+      h1[2].innerText = `clientX: ${event.clientX}, clientY: ${event.clientY}`;
+      h1[3].innerText = `screenX: ${event.screenX}, screenY: ${event.screenY}`;
+      h1[4].innerText = `offsetX: ${event.offsetX}, offsetY: ${event.offsetY}`;
+
+      //   box.style.top = event.pageY + "px";
+      //   box.style.left = event.pageX + "px";
+    });
+
+    //   const softlyAnimationX = (xValue, speedValue) => {
+    //     if (typeof xValue === "number" && speedValue) {
+    //       targetX += (xValue - targetX) * speedValue;
+
+    //       return targetX.toFixed(2);
+    //     }
+    //   };
+
+    //   const softlyAnimationY = (yValue, speedValue) => {
+    //     if (typeof yValue === "number" && speedValue) {
+    //       targetY += (yValue - targetY) * speedValue;
+
+    //       return targetY.toFixed(2);
+    //     }
+    //   };
+
+    //   const loop = () => {
+    //     /**부드러운 애니메이션 구현**/
+
+    //     // targetX += (x - targetX) * speed;
+    //     // targetY += (y - targetY) * speed;
+
+    //     // box.style.top = y + "px";
+    //     // box.style.left = x + "px";
+
+    //     // box.style.top = targetY + "px";
+    //     // box.style.left = targetX + "px";
+
+    //     box.style.top = softlyAnimationY(y, speed) + "px";
+    //     box.style.left = softlyAnimationX(x, speed) + "px";
+
+    //     window.requestAnimationFrame(loop);
+    //   };
+
+    //   loop();
+  </script>
+</html>
