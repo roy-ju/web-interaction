@@ -1,4 +1,4 @@
-let prev_button, next_button;
+let prevBtn, nextBtn;
 let contentWrap;
 let disk_inner;
 let pageNum = 0;
@@ -12,15 +12,15 @@ bgArray[1] = ["#b6bfc8", "#36595b"];
 bgArray[2] = ["#e58e82", "#6f569f"];
 
 window.onload = function () {
-  prev_button = document.querySelectorAll("button")[0];
-  next_button = document.querySelectorAll("button")[1];
+  prevBtn = document.querySelectorAll("button")[0];
+  nextBtn = document.querySelectorAll("button")[1];
 
   contentWrap = document.querySelector(".contentWrap");
   disk_inner = document.querySelectorAll(".disk_inner");
   album = document.querySelectorAll(".album");
   totalNum = album.length;
 
-  prev_button.addEventListener("click", function () {
+  prevBtn.addEventListener("click", function () {
     if (pageNum > 0) {
       pageNum--;
     } else {
@@ -29,7 +29,7 @@ window.onload = function () {
     pageChangeFunc();
   });
 
-  next_button.addEventListener("click", function () {
+  nextBtn.addEventListener("click", function () {
     if (pageNum < totalNum - 1) {
       pageNum++;
     } else {

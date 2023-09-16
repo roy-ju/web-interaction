@@ -10,7 +10,7 @@ body {
   width: 100vw;
   height: 100vh;
   -ms-touch-action: none;
-      touch-action: none;
+  touch-action: none;
 }
 
 .contentWrap .album {
@@ -18,7 +18,7 @@ body {
   top: 47%;
   left: 55%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 600px;
   height: 400px;
   visibility: hidden;
@@ -44,7 +44,7 @@ body {
 .contentWrap .album.active .disk {
   left: 180px;
   -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
+  transition-delay: 0.5s;
 }
 
 @media only screen and (max-width: 720px) {
@@ -54,7 +54,7 @@ body {
   .contentWrap .album.active .disk {
     left: 35%;
     -webkit-transition-delay: 0.5s;
-            transition-delay: 0.5s;
+    transition-delay: 0.5s;
   }
 }
 
@@ -63,7 +63,7 @@ body {
   width: 400px;
   height: 400px;
   -webkit-box-shadow: 2px 14px 40px rgba(0, 0, 0, 0.3);
-          box-shadow: 2px 14px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 14px 40px rgba(0, 0, 0, 0.3);
 }
 
 .contentWrap .album .coverImg img {
@@ -87,11 +87,11 @@ body {
   border-radius: 50%;
   background: linear-gradient(120deg, #000, #333333, #000);
   -webkit-box-shadow: 4px 14px 40px rgba(0, 0, 0, 0.3);
-          box-shadow: 4px 14px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 14px 40px rgba(0, 0, 0, 0.3);
   -webkit-transition: left 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: left 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -webkit-animation: rotateAni 10s ease infinite;
-          animation: rotateAni 10s ease infinite;
+  animation: rotateAni 10s ease infinite;
 }
 
 @media only screen and (max-width: 720px) {
@@ -106,7 +106,7 @@ body {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 160px;
   height: 160px;
   background-color: #0473a4;
@@ -127,7 +127,7 @@ body {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 7px;
   height: 7px;
   background-color: black;
@@ -137,7 +137,7 @@ body {
 .contentWrap .album:hover .disk {
   left: 40%;
   -webkit-transition-delay: 0s;
-          transition-delay: 0s;
+  transition-delay: 0s;
 }
 
 .buttonWrap {
@@ -188,22 +188,22 @@ body {
 @-webkit-keyframes rotateAni {
   0% {
     -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes rotateAni {
   0% {
     -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 /*# sourceMappingURL=motion.css.map */
