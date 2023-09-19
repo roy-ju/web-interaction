@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+body {
+  overflow: hidden;
+  font-family: "Do Hyeon", sans-serif;
+  background: #1c8f9c;
+}
+
+h1 {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  font-weight: 100;
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+section .cardItem {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  padding: 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+section .cardItem:nth-child(1) {
+  background: linear-gradient(62deg, #fbab7e, #f7ce68);
+}
+
+section .cardItem:nth-child(2) {
+  background: linear-gradient(20deg, #ff5e7e, #ff99ac);
+}
+
+section .cardItem:nth-child(3) {
+  background: linear-gradient(160deg, #0093e9, #80d0c7);
+}
+
+section .cardItem:nth-child(4) {
+  background: linear-gradient(40deg, #fd1d1d, #833ab4);
+}
+
+section .cardItem:nth-child(5) {
+  background: linear-gradient(20deg, black 0%, #ffffff 100%);
+}
+
+.buttonWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
+.buttonWrap button {
+  position: relative;
+  z-index: 100;
+  background-color: black;
+  color: #ffffff;
+  padding: 8px 20px;
+  border-radius: 8px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.buttonWrap button:hover {
+  background-color: gold;
+  color: black;
+}
+/*# sourceMappingURL=card_1.css.map */

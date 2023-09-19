@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+
+body {
+  overflow: hidden;
+  font-family: "Do Hyeon", sans-serif;
+  background: rgb(28, 143, 156);
+}
+
+h1 {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  font-weight: 100;
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+
+  .cardItem {
+    position: absolute;
+
+    width: 200px;
+    height: 100px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+
+    font-size: 1rem;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.5);
+
+    &:nth-child(1) {
+      background: linear-gradient(62deg, #fbab7e, #f7ce68);
+    }
+    &:nth-child(2) {
+      background: linear-gradient(20deg, #ff5e7e, #ff99ac);
+    }
+    &:nth-child(3) {
+      background: linear-gradient(160deg, #0093e9, #80d0c7);
+    }
+    &:nth-child(4) {
+      background: linear-gradient(40deg, #fd1d1d, #833ab4);
+    }
+    &:nth-child(5) {
+      background: linear-gradient(20deg, black 0%, #ffffff 100%);
+    }
+  }
+}
+
+.buttonWrap {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  button {
+    position: relative;
+    z-index: 100;
+    background-color: black;
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      background-color: gold;
+      color: black;
+    }
+  }
+}
